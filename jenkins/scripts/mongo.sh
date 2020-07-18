@@ -2,6 +2,5 @@
 
 echo 'DB Connection'
 set -x
-cd backend
-node server
-set +x
+sudo cd backend
+sudo node server
