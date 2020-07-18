@@ -12,7 +12,7 @@ app.use(express.json());
 
 //Database MongoDB
 
-const uri = 'mongodb://db_admin:admin123@52.6.137.120:27017/test';
+const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 );
 const connection = mongoose.connection;
