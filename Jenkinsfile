@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'nothing'
+                sh 'npm install'
             }
         }
         stage('Test') {
@@ -22,7 +22,8 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                sh 'cd backend/'
+                sh 'cd exercise-app/backend/'
+                sh 'ls'
                 sh 'npm install'
                 sh 'npm start'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)?'
