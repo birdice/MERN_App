@@ -23,6 +23,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
+                sh 'cd backend && node server'
                 input message: 'Terminó el DEMO del TFM para UNIR? (Click "Proceed" para continuar)?'
                 sh './jenkins/scripts/kill.sh'
             }
