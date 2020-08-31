@@ -24,7 +24,9 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh'
                 sh 'cd /var/jenkins_home/workspace/UNIR_MERN_App_Pipeline/backend'
-                sh 'rm -rf package-lock.json && ls'
+                sh 'rm -rf package-lock.json node_modules && ls'
+                sh 'npm install'
+                sh 'npm start'
                 input message: 'Terminó el DEMO del TFM para UNIR? (Click "Proceed" para continuar)?'
                 sh './jenkins/scripts/kill.sh'
             }
