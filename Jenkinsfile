@@ -22,8 +22,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
-                sh 'cd exercise-app/backend/'
-                sh 'ls'
+                sh 'ls /var/jenkins_home/workspace/UNIR_MERN_App_Pipeline'
                 sh 'npm install'
                 sh 'npm start'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)?'
