@@ -24,7 +24,7 @@ echo $! > .pidfile
 set +x
 
 echo 'DB Connection'
-cd /backend/
+cd backend/
 node server
 
 echo 'Now...'
