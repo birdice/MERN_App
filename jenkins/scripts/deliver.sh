@@ -25,7 +25,8 @@ set +x
 
 echo 'DB Connection'
 cd backend/
-node server
+npm install
+npm start
 
 echo 'Now...'
 echo 'Visit http://localhost:3000 to see your Node.js/React application in action.'
